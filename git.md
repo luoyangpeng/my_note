@@ -1,36 +1,41 @@
-###²é¿´µ±Ç°×´Ì¬ 
+###è®¾ç½®Gitçš„user nameå’Œemailï¼š
+$ git config --global user.name "test"
+$ git config --global user.email "test@163.com"
+###ç”Ÿå­˜å¯†é’¥
+$ ssh-keygen -t rsa -C "test@163.com"
+###æŸ¥çœ‹å½“å‰çŠ¶æ€ 
 $ git status 
-###Ìí¼Óµ½±¾µØ°æ±¾¿â
+###æ·»åŠ åˆ°æœ¬åœ°ç‰ˆæœ¬åº“
 $ git add .
 $ git add --all
-#Ìá½»¸Ä±ä
+#æäº¤æ”¹å˜
 $ git commit -m 'update'
-###Ìá½»²¢ÇÒ¼Ó×¢ÊÍ 
+###æäº¤å¹¶ä¸”åŠ æ³¨é‡Š 
 $git commit -am ''
-###ÍÆËÍµ½Ô¶³Ì·ÖÖ§master
+###æ¨é€åˆ°è¿œç¨‹åˆ†æ”¯master
 $ git push origin master
-###Í¬²½´úÂë
+###åŒæ­¥ä»£ç 
 $ git pull origin master
-###ºÏ²¢·ÖÖ§ test
+###åˆå¹¶åˆ†æ”¯ test
 $ git merge test
-###²é¿´±¾µØËùÓĞ·ÖÖ§
+###æŸ¥çœ‹æœ¬åœ°æ‰€æœ‰åˆ†æ”¯
 $ git branch
-###ĞÂ½¨·ÖÖ§ test
+###æ–°å»ºåˆ†æ”¯ test
 $ git branch -b test
-###²é¿´ËùÓĞ·ÖÖ§
+###æŸ¥çœ‹æ‰€æœ‰åˆ†æ”¯
 $ git branch -a
-###²é¿´Ô¶³Ì·ÖÖ§
+###æŸ¥çœ‹è¿œç¨‹åˆ†æ”¯
 $ git brach -r
-###Ìí¼ÓÔ¶³Ì²Ö¿â
-$ git remote add µØÖ·
-###ÇĞ»»·ÖÖ§ test
+###æ·»åŠ è¿œç¨‹ä»“åº“
+$ git remote add åœ°å€
+###åˆ‡æ¢åˆ†æ”¯ test
 $ git checkout test
-###É¾³ı±¾µØ·ÖÖ§
+###åˆ é™¤æœ¬åœ°åˆ†æ”¯
 $ git branch -D master develop 
-###É¾³ıÔ¶³Ì·ÖÖ§
+###åˆ é™¤è¿œç¨‹åˆ†æ”¯
 $ git push origin :branch_remote_name
 $ git branch -r -d branch_remote_name
-###ºöÂÔ±¾µØÎÄ¼ş
+###å¿½ç•¥æœ¬åœ°æ–‡ä»¶
 $ git update-index --assume-unchanged PATH/FILE 
-###»Ö¸´¸ú×Ù
+###æ¢å¤è·Ÿè¸ª
 $ git update-index --no-assume-unchanged /path/to/file 
