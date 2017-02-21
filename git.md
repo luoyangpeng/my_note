@@ -1,6 +1,6 @@
 ###设置Git的user name和email
-> $ git config --global user.name "test"
-> $ git config --global user.email "test@163.com"
+$ git config --global user.name "test" <br>
+$ git config --global user.email "test@163.com"
 ###生存密钥
 $ ssh-keygen -t rsa -C "test@163.com"
 ###查看当前状态 
@@ -33,7 +33,7 @@ $ git checkout test
 ###删除本地分支
 $ git branch -D master develop 
 ###删除远程分支
-$ git push origin :branch_remote_name
+$ git push origin :branch_remote_name <br>
 $ git branch -r -d branch_remote_name
 ###忽略本地文件
 $ git update-index --assume-unchanged PATH/FILE 
