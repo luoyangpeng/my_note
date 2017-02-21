@@ -1,10 +1,10 @@
 # git_command
 
 ###查看当前状态 
-```$ git status ```
+$ git status 
 ###添加到本地版本库
-```$ git add .```
-```$ git add --all```
+$ git add .
+$ git add --all
 #提交改变
 $ git commit -m 'update'
 ###提交并且加注释 
