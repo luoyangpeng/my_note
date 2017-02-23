@@ -1,3 +1,5 @@
+#git 常用命令
+
 ###设置Git的user name和email
 $ git config --global user.name "test" <br>
 $ git config --global user.email "test@163.com"
