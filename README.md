@@ -1,2 +1,2 @@
-# git_command
+# Study notes
 
