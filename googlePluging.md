@@ -1,4 +1,4 @@
-#Google plug
+#Google pluging
 
 ###1. 掘金 Chrome 插件 :帮你发现干货
 
