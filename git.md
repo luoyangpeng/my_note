@@ -43,4 +43,4 @@ $ git update-index --assume-unchanged PATH/FILE
 $ git update-index --no-assume-unchanged /path/to/file 
 
 ### 修改协议
-$ git remote set-ur 'git@xx'
+$ git remote set-url 'git@xx'
