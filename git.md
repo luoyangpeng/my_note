@@ -3,7 +3,7 @@
 ### 设置Git的user name和email
 $ git config --global user.name "test" <br>
 $ git config --global user.email "test@163.com"
-###生存密钥
+### 生成密钥
 $ ssh-keygen -t rsa -C "test@163.com"
 ### 查看当前状态 
 $ git status 
