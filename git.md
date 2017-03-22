@@ -28,6 +28,8 @@ $ git branch -b test
 $ git branch -a
 ### 查看远程分支
 $ git brach -r
+$ git remote 不带参数，列出已经存在的远程分支
+$ git remote -v | --verbose 列出详细信息，在每一个名字后面列出其远程url
 ### 添加远程仓库
 $ git remote add 地址
 ### 切换分支 test
