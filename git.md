@@ -1,16 +1,16 @@
-#git 常用命令
+# git 常用命令
 
-###设置Git的user name和email
+### 设置Git的user name和email
 $ git config --global user.name "test" <br>
 $ git config --global user.email "test@163.com"
 ###生存密钥
 $ ssh-keygen -t rsa -C "test@163.com"
-###查看当前状态 
+### 查看当前状态 
 $ git status 
-###添加到本地版本库
+### 添加到本地版本库
 $ git add .
 $ git add --all
-#提交改变
+# 提交改变
 $ git commit -m 'update'
 ###提交并且加注释 
 $git commit -am ''
