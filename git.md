@@ -41,3 +41,6 @@ $ git branch -r -d branch_remote_name
 $ git update-index --assume-unchanged PATH/FILE 
 ### 恢复跟踪
 $ git update-index --no-assume-unchanged /path/to/file 
+
+### 修改协议
+$ git remote set-ur 'git@xx'
