@@ -48,3 +48,6 @@ $ git update-index --no-assume-unchanged /path/to/file
 
 ### 修改协议
 $ git remote set-url 'git@xx'
+
+### 更新忽略文件
+$ git rm -r --cached .
