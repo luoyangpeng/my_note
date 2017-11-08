@@ -51,3 +51,8 @@ $ git remote set-url 'git@xx'
 
 ### 更新忽略文件
 $ git rm -r --cached .
+
+### 打包两个版本的差异文件
+$ git diff 61d2112 f3c0f99 --name-only | xargs zip update.zip
+
+
