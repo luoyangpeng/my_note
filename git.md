@@ -54,5 +54,9 @@ $ git rm -r --cached .
 
 ### 打包两个版本的差异文件
 $ git diff 61d2112 f3c0f99 --name-only | xargs zip update.zip
+### 把修改的文件打包
+git diff-tree -r --no-commit-id --name-only d18f9d5f17e190cfbb836a4acff2d96c0d466a2c | xargs tar -rf mytarfile.tar
+
+
 
 
