@@ -13,3 +13,29 @@ select id from
 	where LOCATE(',查询的Id',paths) > 0 
 	order by id
 ```
+
+``` mysql
+
+DROP FUNCTION IF EXISTS queryBranchChildren;
+DELIMITER |
+CREATE FUNCTION `queryBranchChildren` (departmentId INT)
+RETURNS VARCHAR(4000)
+BEGIN
+DECLARE sTemp VARCHAR(4000);
+DECLARE sTempChd VARCHAR(4000);
+ 
+SET sTemp = '$';
+SET sTempChd = cast(departmentId as char);
+ 
+WHILE sTempChd is not NULL DO
+SET sTemp = CONCAT(sTemp,',',sTempChd);
+SELECT group_concat(id) INTO sTempChd FROM default_members_branch where FIND_IN_SET(parent_id,sTempChd);
+END WHILE;
+return sTemp;
+END
+|
+DELIMITER ;
+
+select queryBranchChildren(1) ; 
+
+```
