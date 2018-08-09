@@ -1,5 +1,6 @@
 # MYSQL
 ### 查询 id =xx 的所有下级
+1.使用sql递归
 ``` mysql
 select id from 
 	( SELECT id,parent_id,
@@ -14,6 +15,7 @@ select id from
 	order by id
 ```
 
+2. 使用mysql函数
 ``` mysql
 
 DROP FUNCTION IF EXISTS queryDepartmentChildren;
