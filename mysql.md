@@ -1,5 +1,6 @@
-// 查询 id =1 的所有下级
-select id from 
+# MYSQL
+### 查询 id =1 的所有下级
+$ select id from 
 	( SELECT id,parent_id,
 	@le:= IF (parent_id = 0 ,0,
 	IF( LOCATE(CONCAT('|',parent_id,':'),@pathlevel) > 0,SUBSTRING_INDEX( SUBSTRING_INDEX(@pathlevel,CONCAT('|',parent_id,':'),-1),'|',1) +1,@le+1) ) levels,@pathlevel:= CONCAT(@pathlevel,'|',id,':', @le ,'|') pathlevel	,@pathnodes:= 
