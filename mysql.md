@@ -16,7 +16,7 @@ select id from
 
 ``` mysql
 
-DROP FUNCTION IF EXISTS queryBranchChildren;
+DROP FUNCTION IF EXISTS queryDepartmentChildren;
 DELIMITER |
 CREATE FUNCTION `queryBranchChildren` (departmentId INT)
 RETURNS VARCHAR(4000)
@@ -29,13 +29,13 @@ SET sTempChd = cast(departmentId as char);
  
 WHILE sTempChd is not NULL DO
 SET sTemp = CONCAT(sTemp,',',sTempChd);
-SELECT group_concat(id) INTO sTempChd FROM default_members_branch where FIND_IN_SET(parent_id,sTempChd);
+SELECT group_concat(id) INTO sTempChd FROM department where FIND_IN_SET(parent_id,sTempChd);
 END WHILE;
 return sTemp;
 END
 |
 DELIMITER ;
 
-select queryBranchChildren(1) ; 
+select queryDepartmentChildren(1) ; 
 
 ```
