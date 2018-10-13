@@ -41,3 +41,41 @@ DELIMITER ;
 select queryDepartmentChildren(1) ; 
 
 ```
+
+
+
+### MYSQL主从同步
+一、主库
+1.主库配置
+```
+# bind-address           = 127.0.0.1
+server-id               = 1
+log_bin                 = /var/log/mysql/mysql-bin.log
+```
+2.创建同步账户
+```
+grant replication slave on *.* to 'slave'@'%' identified by '123456';
+```
+3.查看maser信息
+```
+show master status;
+```
+二、从库
+1.从库配置
+```
+server-id               = 2
+```
+2.执行同步命令，设置主数据库ip，同步帐号密码，同步位置
+```
+change master to master_host='192.168.1.2',master_user='slave',master_password='123456',master_log_file='mysql-bin.000001'（master的File）,master_log_pos=666(master的Position);
+```
+3.开始
+
+```
+start slave;
+```
+4.查看从库状态
+```
+show slave status\G
+#Slave_IO_Running 和 Slave_SQL_Running 值 都为 Yes  说明就成功了
+```
