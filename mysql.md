@@ -67,7 +67,7 @@ server-id               = 2
 ```
 2.执行同步命令，设置主数据库ip，同步帐号密码，同步位置
 ```
-change master to master_host='192.168.1.2',master_user='slave',master_password='123456',master_log_file='mysql-bin.000001'（master的File）,master_log_pos=666(master的Position);
+change master to master_host='192.168.1.2',master_user='slave',master_password='123456',master_log_file='mysql-bin.000001',master_log_pos=666;
 ```
 3.开始
 
