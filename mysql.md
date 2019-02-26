@@ -83,10 +83,9 @@ show slave status\G
 
 ### 计算两个经纬度的距离
 ```
+DROP FUNCTION IF EXISTS `getDistance`;
 DELIMITER $$
-DROP FUNCTION IF EXISTS `getDistance`$$
-
-CREATE  FUNCTION `getDistance`(lat1 double,lng1 double,lat2 double,lng2 double) 
+CREATE FUNCTION `getDistance`(lat1 double,lng1 double,lat2 double,lng2 double) 
 RETURNS double
 BEGIN
 IF(LENGTH(lat1) =0 || LENGTH(lng1) =0 || LENGTH(lat2) =0 || LENGTH(lng2) =0 || lat1 IS NULL|| lng1 IS NULL|| lat2 IS NULL|| lng2 IS NULL) THEN
