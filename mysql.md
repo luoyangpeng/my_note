@@ -20,7 +20,7 @@ select id from
 
 DROP FUNCTION IF EXISTS queryDepartmentChildren;
 DELIMITER |
-CREATE FUNCTION `queryBranchChildren` (departmentId INT)
+CREATE FUNCTION `queryDepartmentChildren` (departmentId INT)
 RETURNS VARCHAR(4000)
 BEGIN
 DECLARE sTemp VARCHAR(4000);
@@ -79,3 +79,21 @@ start slave;
 show slave status\G
 #Slave_IO_Running 和 Slave_SQL_Running 值 都为 Yes  说明就成功了
 ```
+
+
+### 计算两个经纬度的距离
+```
+DELIMITER $$
+DROP FUNCTION IF EXISTS `getDistance`$$
+
+CREATE  FUNCTION `getDistance`(lat1 double,lng1 double,lat2 double,lng2 double) 
+RETURNS double
+BEGIN
+IF(LENGTH(lat1) =0 || LENGTH(lng1) =0 || LENGTH(lat2) =0 || LENGTH(lng2) =0 || lat1 IS NULL|| lng1 IS NULL|| lat2 IS NULL|| lng2 IS NULL) THEN
+      RETURN -1;
+    END IF;
+	return round(6378.138*2*asin(sqrt(pow(sin( (lat1*pi()/180-lat2*pi()/180)/2),2)+cos(lat1*pi()/180)*cos(lat2*pi()/180)* pow(sin( (lng1*pi()/180-lng2*pi()/180)/2),2)))*1000);
+END $$
+```
+
+DELIMITER ;
