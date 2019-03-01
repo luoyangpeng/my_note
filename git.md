@@ -59,4 +59,5 @@ git diff-tree -r --no-commit-id --name-only d18f9d5f17e190cfbb836a4acff2d96c0d46
 
 
 
-
+### git 常用操作 
+https://segmentfault.com/a/1190000018273794
